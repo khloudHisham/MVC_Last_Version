@@ -1,0 +1,22 @@
+﻿@model TraineCourseDegreeViewModel 
+@{
+    Layout = "_AdvLayout";
+}
+<table style="border-collapse: collapse; width: 100%;">
+    <tr style="border-bottom: 1px solid #dddddd;">
+
+        <th style="padding: 8px; text-align: left;">Trainee Id</th>
+        <th style="padding: 8px; text-align: left;">Trainee Name</th>
+        <th style="padding: 8px; text-align: left;">Course Name</th>
+        <th style="padding: 8px; text-align: left;">Course Degree</th>
+        <th style="padding: 8px; text-align: left;">Student Grade</th>
+
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">@Model.TraineeId</td>
+        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">@Model.TraineeName</td>
+        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">@Model.CourseName</td>
+        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">@Model.CourseDegree</td>
+        <td style="padding: 8px; border-bottom: 1px solid #dddddd;color:@Model.color;">@Model.Degree</td>
+    </tr>
+</table>

@@ -1,0 +1,52 @@
+﻿@model lab2MVC.Models.instructor
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<h1>Instructor Details</h1>
+
+<div class="card">
+    <img src="~/images/@Model.ImageURl" class="card-img-top" alt="Instructor Image">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text"><strong>ID:</strong> @Model.Id</p>
+        <p class="card-text"><strong>Salary:</strong> @Model.Salary</p>
+        <p class="card-text"><strong>Address:</strong> @Model.Address</p>
+        <a href="@Url.Action("Index", "Instructor")" class="btn btn-primary">Back to List</a>
+    </div>
+</div>
+
+<style>
+    .card {
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+        height: 200px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .btn-primary {
+        display: block;
+        width: 100%;
+    }
+</style>

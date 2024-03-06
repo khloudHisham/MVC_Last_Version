@@ -1,0 +1,43 @@
+﻿@* @using lab2MVC.ViewModels
+@model InstractorNewListViewModel
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+
+<form method="post" action="/InstractorListNew/SaveNew">
+    <label>Name</label>
+    <input type="text" id="Name" name="Name" value="@Model.Name" class="form-check form-control" />
+    <label>Image</label>
+    <input type="text" id="Image" name="Image" value="@Model.Image" class="form-check form-control" />
+    <label>Salary</label>
+    <input type="number" id="Salary" name="Salary" value="@Model.Salary" class="form-check form-control" />
+    <label>Address</label>
+    <input type="text" id="Address" name="Address" value="@Model.Address" class="form-check form-control" />
+   
+    <label>Department</label>
+    <select class="form-check form-control" id="DeptId" name="DeptId" onchange="loadCourses()">
+        @foreach (var DeptItem in Model.DeptList)
+        {
+            <option value="@DeptItem.Id" selected>
+                @DeptItem.DeptName
+            </option>
+        }
+    </select>
+
+    <label>Courses</label>
+    <select class="form-check form-control" id="CourseId" name="CourseId">
+        @foreach (Course Crsitem in Model.CrsList)
+        {
+            <option value="@Crsitem.Id" selected>
+                @Crsitem.CourseName
+            </option>
+        }
+    </select>
+
+
+    <a href="/InstractorListNew/Show">Back To list</a>
+    <input type="submit" value="Save" class="btn btn-success" />
+</form>
+ *@

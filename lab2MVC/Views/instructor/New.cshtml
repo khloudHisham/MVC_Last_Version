@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "_AdvLayout";
+
+    ViewData["Title"] = "New";
+}
+
+<h1>Add New Instructor</h1>
+<br/>
+<form action="/Instructor/SaveNew" method="post" enctype="multipart/form-data">
+    
+    <label>Name</label>
+    <input name="Name" id="Name" class="form form-control"/>
+
+   <label for="ImageFile">Image:</label>
+    <input type="file" name="ImageFile" id="ImageFile" class="form-control-file" accept="image/*">
+    <br/>
+
+    <label>Salary</label>
+    <input name="Salary" id="Salary"class="form form-control" />
+
+    <label>Address</label>
+    <input name="Address" id="Address" class="form form-control" />
+  @*     Department *@   
+ <label>Department</label>
+    <select name="DepartmentId" id="DepartmentId" class="form-control">
+        @foreach (var department in ViewBag.Departments)
+        {
+            <option value="@department.Id">@department.Name</option>
+        }
+    </select>
+    @* cources *@
+
+    <label>Course</label>
+    <select name="CourseId" id="CourseId" class="form-control">
+        @foreach (var course in ViewBag.Courses)
+        {
+            <option value="@course.Id">@course.Name</option>
+        }
+    </select>
+
+    <br/>
+    <a href="/Instructor/Index" class="btn btn-warning">Back To list</a>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
